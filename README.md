@@ -73,6 +73,7 @@ As expected, higher perceived corruption is associated with lower happiness (cor
 *Distributions and outliers:*
 
 • Happiness and GDP had the widest spread and strongest outliers.
+
 • Corruption and generosity were much more tightly distributed.
 
 
@@ -118,4 +119,4 @@ If you would like to connect or give feedback on this project (much appreciated)
 
 • LinkedIn: https://www.linkedin.com/in/joshua-kohlmeyer-14003928a
 
-• GitHub: 
+• GitHub: https://github.com/JoshuaKohlmeyer
