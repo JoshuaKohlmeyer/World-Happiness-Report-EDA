@@ -1,110 +1,121 @@
 # World-Happiness-Report-EDA
-Exploratory Data Analysis of a World Happiness Report using R and tidyverse.
+Exploratory Data Analysis of a World Happiness Report (dataset source: https://www.kaggle.com/datasets/ajaypalsinghlo/world-happiness-report-2024) using R and tidyverse.
 
 Author: Joshua Kohlmeyer
+
 Tools: R, Tidyverse, RMarkdown, Git
-Dataset: World Happiness Report 2024 (source: https://www.kaggle.com/datasets/ajaypalsinghlo/world-happiness-report-2024)
+
+Dataset: World Happiness Report 2024
+
 Countries: 143
+
 Features: 11
 
-Project Overview
+**Project Overview**
 
-This project presents a full exploratory data analysis (EDA) of the 2024 World Happiness Report. The objective is to investigate the main factors associated with national happiness and to apply a complete real-world data analysis workflow using R.
+My aim with this project was to present a full exploratory data analysis (EDA) of a 2024 World Happiness Report. I investigated the main factors associated with national happiness and applied the "full EDA process" using **R**, as outlined (and well-taught) in my University of Pretoria WST221 module. I did this to gain practical experience working with real-world data in **R**. The goal was to uncover which factors most strongly explain international differences in happiness.
 
-The analysis includes data loading, cleaning, distribution analysis, outlier detection, correlation analysis, and interpretation of key relationships.
+**Dataset Description**
 
-Dataset Description
+The main variables used in the analysis were:
 
-The main variables used in the analysis are:
+• ladder_score – Overall happiness score
 
-ladder_score – Overall happiness score
+• gdp – Log GDP per capita
 
-gdp – Log GDP per capita
+• life_expectancy – Healthy life expectancy
 
-life_expectancy – Healthy life expectancy
+• social_support – Perceived social support
 
-social_support – Perceived social support
+• freedom – Freedom to make life choices
 
-freedom – Freedom to make life choices
+• generosity – Generosity score
 
-generosity – Generosity score
+• corruption – Perceived corruption
 
-corruption – Perceived corruption
+• dystopia_residual – Unexplained component of happiness
 
-dystopia_residual – Unexplained component of happiness
 
-Analysis Workflow
+**Analysis Workflow**
 
-Loaded and cleaned the dataset in R
+1. Loaded and cleaned the dataset in R (using tidyverse)
+2. Renamed variables for improved readability
+3. Looked at distributions using histograms (awesome function; applied coursework theory here)
+4. Detected outliers using boxplots (underrated graph)
+5. Built a correlation heatmap (never disappoints when checking for correlation between variables)
+6. Interpreted the results in plain English (for clear communication of results)
 
-Renamed variables for improved readability
+All the analysis was done using "tidyverse" and documented using "RMarkdown".
 
-Analyzed distributions using histograms
+**Key Findings**
 
-Detected outliers using boxplots
+*Strongest drivers of happiness:*
 
-Constructed a correlation heatmap
+• GDP per capita
 
-Interpreted statistical relationships in practical terms
+• Healthy life expectancy
 
-All analysis was performed using the tidyverse ecosystem and documented using RMarkdown.
+Both variables showed very strong positive correlations (~ 0.75-0.85) with happiness.
 
-Key Findings
 
-Strongest drivers of happiness:
+*Weakest relationship:*
 
-GDP per capita
+• Generosity
 
-Healthy life expectancy
+Generosity showed near-zero correlation with happiness across countries, which was interesting and a bit unexpected.
 
-Both variables show very strong positive correlations with happiness.
+*Negative relationship:*
 
-Weakest relationship:
+• Corruption
 
-Generosity
+As expected, higher perceived corruption is associated with lower happiness (correlation ~-0.4 to -0.5 (clear negative relationship))
 
-Generosity shows near-zero correlation with happiness at the country level.
+*Distributions and outliers:*
 
-Negative relationship:
+• Happiness and GDP had the widest spread and strongest outliers.
+• Corruption and generosity were much more tightly distributed.
 
-Corruption
 
-Higher perceived corruption is associated with lower happiness.
+**Final Conclusion**
 
-Distributions and outliers:
+National happiness is driven primarily by economic strength and population health, while social generosity plays a minimal role in happiness across countires. Corruption consistently reduces well-being across nations.
 
-Happiness and GDP show the widest spread and strongest outliers.
 
-Corruption and generosity show much tighter distributions.
+**What I Learnt**
 
-Core Insight
+• Economic success and people's health dominates national well-being
 
-National happiness is driven primarily by economic conditions and population health, while social generosity plays a minimal role at the country level. Corruption consistently reduces well-being across countries.
+• Not all “positive” traits (like generosity) translate directly into higher happiness
 
-Technology Used
+• Visualization and correlation analysis are essential in making sense of real data
 
-R
 
-tidyverse
+**Tools**
 
-RMarkdown
+• R
 
-Git and GitHub
+• tidyverse
 
-Repository Structure
+• RMarkdown
 
-World-Happiness-Report-eda.Rmd
+• Git and GitHub
 
-data.csv
 
-README.md
+**Project Files**
 
-World-Happiness-Report-EDA.Rproj
+• World-Happiness-Report-eda.Rmd
 
-Contact
+• data.csv
 
-For collaboration or questions:
+• README.md
 
-LinkedIn: (Add your LinkedIn here)
+• World-Happiness-Report-EDA.Rproj
 
-GitHub: (This repository)
+
+**Contact**
+
+If you would like to connect or give feedback on this project (much appreciated):
+
+• LinkedIn: https://www.linkedin.com/in/joshua-kohlmeyer-14003928a
+
+• GitHub: 
