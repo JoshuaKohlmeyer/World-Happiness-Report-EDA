@@ -1,30 +1,124 @@
 ---
-title: "World Happiness Report -Exploratory Data Analysis"
+title: "World Happiness Report 2024 – Exploratory Data Analysis"
 author: "Joshua Kohlmeyer"
-date: "2025-12-08"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
 
-## R Markdown
+# Setup: Load, Structure, Viewing, Summary Statistics, Missing Values Check, Cleaning Column Names
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+happiness <- read_csv("data.csv")
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+dim(happiness)
 
-```{r cars}
-summary(cars)
-```
+glimpse(happiness)
 
-## Including Plots
+head(happiness)
 
-You can also embed plots, for example:
+summary(happiness)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+colSums(is.na(happiness))
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+happiness <- happiness %>%
+rename(
+country = `Country name`,
+ladder_score = `Ladder score`,
+upper_whisker = upperwhisker,
+lower_whisker = lowerwhisker,
+gdp = `Log GDP per capita`,
+social_support = `Social support`,
+life_expectancy = `Healthy life expectancy`,
+freedom = `Freedom to make life choices`,
+generosity = Generosity,
+corruption = `Perceptions of corruption`,
+dystopia_residual = `Dystopia + residual`
+)
+
+glimpse(happiness)
+
+
+# Variable Descriptions
+
+variable_descriptions <- tibble(
+  Variable = colnames(happiness),
+  Description = c(
+    "Country name",
+    "Overall happiness score",
+    "Upper confidence interval",
+    "Lower confidence interval",
+    "Log GDP per capita",
+    "Social support score",
+    "Healthy life expectancy score",
+    "Freedom to make life choices",
+    "Generosity score",
+    "Perceived corruption",
+    "Dystopia + residual component"
+  )
+)
+
+variable_descriptions
+
+
+# Distribution of Key Variables
+
+happiness %>%
+  select(ladder_score, gdp, life_expectancy, freedom, generosity, corruption) %>%
+  pivot_longer(everything()) %>%
+  ggplot(aes(value)) +
+  facet_wrap(~name, scales = "free") +
+  geom_histogram(bins = 25, fill = "steelblue", color = "white") +
+  labs(
+    title = "Distributions of Key World Happiness Variables",
+    x = "Value",
+    y = "Count"
+  ) +
+  theme_minimal()
+
+
+# Outlier Detection Using Boxplots
+
+happiness %>%
+  select(ladder_score, gdp, life_expectancy, freedom, generosity, corruption) %>%
+  pivot_longer(everything()) %>%
+  ggplot(aes(x = name, y = value)) +
+  geom_boxplot(fill = "tomato", alpha = 0.7) +
+  coord_flip() +
+  labs(
+    title = "Outlier Detection Across Key Variables",
+    x = "Variable",
+    y = "Value"
+  ) +
+  theme_minimal()
+
+
+# Correlation Heatmap
+
+happiness %>%
+  select(ladder_score, gdp, life_expectancy, freedom, generosity, corruption) %>%
+  cor() %>%
+  as.data.frame() %>%
+  rownames_to_column("Variable1") %>%
+  pivot_longer(-Variable1, names_to = "Variable2", values_to = "Correlation") %>%
+  ggplot(aes(Variable1, Variable2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 0) +
+  labs(
+    title = "Correlation Heatmap of World Happiness Drivers",
+    x = "",
+    y = ""
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+# Key Insights from Exploratory Data Analysis
+
+cat("    - Happiness (ladder score) follows an approximately normal distribution.
+    - GDP per capita and healthy life expectancy are the strongest drivers of national happiness.
+    - Perceived corruption shows a clear negative relationship with happiness.
+    - Generosity exhibits near-zero correlation with happiness and most other drivers.
+    - Economic and health factors dominate subjective well-being at the country level.")
+
+
