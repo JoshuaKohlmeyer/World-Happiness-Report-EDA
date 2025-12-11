@@ -47,6 +47,12 @@ The main variables used in the analysis were:
 
 All the analysis was done using "tidyverse" and documented using "RMarkdown".
 
+
+**Code Output**
+
+https://JoshuaKohlmeyer.github.io/World-Happiness-Report-EDA/World-Happiness-Report-eda.html
+
+
 **Key Findings**
 
 *Strongest drivers of happiness:*
