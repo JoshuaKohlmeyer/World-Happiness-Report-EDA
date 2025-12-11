@@ -50,7 +50,7 @@ All the analysis was done using "tidyverse" and documented using "RMarkdown".
 
 **Code Output**
 
-https://JoshuaKohlmeyer.github.io/World-Happiness-Report-EDA/World-Happiness-Report-eda.html
+https://joshuakohlmeyer.github.io/World-Happiness-Report-EDA/
 
 
 **Key Findings**
