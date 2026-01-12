@@ -123,6 +123,6 @@ National happiness is driven primarily by economic strength and population healt
 
 If you would like to connect or give feedback on this project (much appreciated):
 
-• LinkedIn: https://www.linkedin.com/in/joshua-kohlmeyer-14003928a
+• LinkedIn: https://www.linkedin.com/in/joshua-kohlmeyer/
 
 • GitHub: https://github.com/JoshuaKohlmeyer
