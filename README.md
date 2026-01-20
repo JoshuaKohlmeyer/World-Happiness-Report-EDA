@@ -56,6 +56,16 @@ https://joshuakohlmeyer.github.io/World-Happiness-Report-EDA/
 
 ---
 
+## Visual Highlights
+
+### Key Variable Distributions
+![Distributions](screenshots/Key_Variable_Distributions.png)
+
+### Outlier Detection
+![Outliers](screenshots/Outlier_Detection.png)
+
+---
+
 ## Key Findings
 
 ### Strongest drivers of happiness
