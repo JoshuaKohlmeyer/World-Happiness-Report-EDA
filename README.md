@@ -1,5 +1,7 @@
 # World Happiness Report EDA
 
+[![GitHub Pages](https://img.shields.io/badge/Live%20Project-View%20Website-brightgreen)](https://joshuakohlmeyer.github.io/World-Happiness-Report-EDA/)
+
 Exploratory Data Analysis of a World Happiness Report using **R** and **tidyverse**.
 Dataset source: https://www.kaggle.com/datasets/ajaypalsinghlo/world-happiness-report-2024
 
@@ -128,3 +130,5 @@ If you would like to connect or give feedback on this project (much appreciated)
 
 - LinkedIn: https://www.linkedin.com/in/joshua-kohlmeyer/  
 - GitHub: https://github.com/JoshuaKohlmeyer
+
+##
